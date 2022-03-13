@@ -1,0 +1,21 @@
+version: '1'
+services :
+  users:
+    build: ./
+    container_name: trips-service
+    environment:
+        - MONGO_HOST=mongo 
+    links:      
+      - mongo
+    depends_on:
+      - mongo
+    expose:
+      - "5000"
+    command: ["mongo:27017","--timeout=30", "--", "node", "./trips/server.js"]
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    expose:
+      - "27017"

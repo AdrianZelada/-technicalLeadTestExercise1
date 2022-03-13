@@ -1,0 +1,38 @@
+{
+  "name": "trip-exam",
+  "version": "1.0.0",
+  "description": "trip-exam",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Adrian Zelada, zelada_torrez@hotmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.6",
+    "morgan": "^1.7.0",
+    "request": "^2.88.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "mocha": "^2.4.5"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "semi": 2
+    }
+  }
+}
