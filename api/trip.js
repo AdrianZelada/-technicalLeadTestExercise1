@@ -31,9 +31,7 @@ class TripRoute extends parentRouter{
             distance: {
                 $gte: params.distance_gte,
             }
-        })
-        // .gte('start.time', params.start_gte)
-        // .where('start.time').gte(params.start_gte);
+        });
 
         params.offset = params.offset != null ? params.offset : 0;
         params.limit = params.limit != null ? params.limit : 10;
@@ -49,8 +47,6 @@ class TripRoute extends parentRouter{
             res.json(this._buildMessageError("Error", `Error in the process`));
         });
     }
-
-
 
     async createByReadings(req, res) {
         let newTrip = {};
@@ -69,9 +65,7 @@ class TripRoute extends parentRouter{
         const sortReadings = readings.sort( (item1, item2) => {
             return item1.time - item2.time;
         });
-
-
-        
+ 
         newTrip.start = {
             time: sortReadings[0].time,
             lat: sortReadings[0].location.lat,

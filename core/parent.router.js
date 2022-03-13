@@ -39,17 +39,7 @@ class ParentRouter {
     }
 
     getAll(req,res) {
-        // console.log("getAll");
-        // console.log(this.Model)
-        // this.Model.findOne({name:'Adrian'}, (err, pe) => {
-        //     console.log(":asdaxxxxsdas");
-        //     console.log(err);
-        //     console.log(pe);
-        // })
         this.Model.find(function (err,resp) {
-            // console.log(":asdasdas");
-            // console.log(err);
-            // console.log(resp);
             if(err) this.handleError(res)(err);
             return res.json(resp);
         });

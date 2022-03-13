@@ -12,8 +12,7 @@ class Repository {
     this.connectionSettings = connectionSettings;
     this.mongoose=mongoose;
     this.mongoose.set('bufferCommands', false);
-    // this.connection= this.mongoose.connect(connectionSettings.host + connectionSettings.database)
-    ( async()=>{
+       ( async()=>{
       this.connection= await this.mongoose.connect(connectionSettings.host)
     })()
     
